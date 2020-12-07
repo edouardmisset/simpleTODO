@@ -1,0 +1,13 @@
+li {
+  list-style: none;
+  cursor: pointer;
+}
+ul {
+  min-width: 250px;
+  max-width: 300px;
+  display: grid;
+  grid-template-columns: 1fr 30px;
+}
+.done {
+  text-decoration: line-through;
+}

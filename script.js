@@ -1,7 +1,7 @@
 // Defining variables (part of the document)
 const button = document.getElementById("Add"),
   input = document.getElementById("input"),
-  ul = document.querySelector("ul"),
+  ul = document.querySelector("UL"),
   li = ul.children;
 
 // Adding eventListeners
@@ -43,12 +43,19 @@ function inputLength() {
  * @date 07/12/2020
  */
 function addItem() {
-  var listItem = document.createElement("li");
+  // Create button
+  var listItem = document.createElement("LI");
+  // Place button
   listItem.appendChild(document.createTextNode(input.value));
   ul.appendChild(listItem);
-  // append a button to delete
+  // Reset input
   input.value = "";
+  // Add a listener
   addingEventListeners();
+
+  deleteButton = document.createElement("button");
+  deleteButton.appendChild(document.createTextNode("X"));
+  ul.appendChild(deleteButton);
 }
 
 /**
@@ -73,3 +80,7 @@ function addingEventListeners() {
     element.addEventListener("click", toggleItem);
   }
 }
+
+console.log(document.querySelectorAll("button"));
+
+function deleteItem() {}

@@ -1,5 +1,5 @@
 // Defining variables (part of the document)
-const button = document.getElementById("Add"),
+const button = document.getElementById("addButton"),
   input = document.getElementById("input"),
   ul = document.querySelector("UL"),
   li = ul.children;

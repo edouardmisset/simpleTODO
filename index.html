@@ -7,7 +7,20 @@
     <title>ToDo List</title>
   </head>
   <body>
-    <h1>My ToDo List</h1>
+    <header class="container bg-teal text-center">
+      <h2>To Do List</h2>
+      <span class="addBar">
+        <label for="input">
+          <input
+            type="text"
+            name="input"
+            id="input"
+            placeholder="Add an item"
+          />
+        </label>
+        <button class="btn" id="addButton">+</button>
+      </span>
+    </header>
     <ul>
       <li>Peace</li>
       <button>X</button>
@@ -16,10 +29,7 @@
       <li>Understanding</li>
       <button>X</button>
     </ul>
-    <label for="input">
-      <input type="text" name="input" id="input" placeholder="Add an item" />
-    </label>
-    <button class="btn" id="Add">Add to the super-duper list</button>
+    <footer class="text-center">Made with 🐙</footer>
     <script src="script.js"></script>
   </body>
 </html>

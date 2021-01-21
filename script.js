@@ -17,7 +17,7 @@ addingEventListenersToDeleteButton();
  * @return {*}
  */
 function addListItemOnClick() {
-  return input.value.length ? addItem() : 0; // ternary : if true, return the first statement else return the one after ":"
+  return input.value.length ? addItem() : 0;
 }
 
 /**
@@ -72,11 +72,20 @@ function addingEventListenersToText() {
   }
 }
 
+/**
+ * @description Add a "hidden" class the the LI and the button in order to hide the (display : none)
+ * @date 21/01/2021
+ * @param {*} event
+ */
 function hideItem(event) {
   event.target.previousElementSibling.classList.add("hidden");
   event.target.classList.add("hidden");
 }
 
+/**
+ * @description Adds an event listener to all the delete buttons
+ * @date 21/01/2021
+ */
 function addingEventListenersToDeleteButton() {
   for (let index = 0; index < deleteButtons.length; index++) {
     deleteButtons[index].addEventListener("click", hideItem);

@@ -1,13 +1,15 @@
 // Defining variables (part of the document)
-const button = document.getElementById("addButton"),
+const addButton = document.getElementById("addButton"),
   input = document.getElementById("input"),
   ul = document.querySelector("UL"),
-  li = ul.children;
+  li = ul.children,
+  deleteButtons = document.getElementsByClassName("deleteBtn");
 
 // Adding eventListeners
-button.addEventListener("click", addListItemOnClick);
+addButton.addEventListener("click", addListItemOnClick);
 input.addEventListener("keypress", addListItemOnEnter);
-addingEventListeners();
+addingEventListenersToText();
+addingEventListenersToDeleteButton();
 
 /**
  * @description checks if the input is valid on click
@@ -45,17 +47,17 @@ function inputLength() {
 function addItem() {
   // Create button
   var listItem = document.createElement("LI");
-  // Place button
+  deleteButton = document.createElement("button");
+  // Gives the button content & places it
   listItem.appendChild(document.createTextNode(input.value));
   ul.appendChild(listItem);
+  deleteButton.appendChild(document.createTextNode("X"));
+  ul.appendChild(deleteButton);
   // Reset input
   input.value = "";
   // Add a listener
-  addingEventListeners();
-
-  deleteButton = document.createElement("button");
-  deleteButton.appendChild(document.createTextNode("X"));
-  ul.appendChild(deleteButton);
+  addingEventListenersToText();
+  addingEventListenersToDeleteButton();
 }
 
 /**
@@ -64,23 +66,36 @@ function addItem() {
  * @param {*} event
  */
 function toggleItem(event) {
-  console.log(event.target);
   return event.target.tagName === "LI"
     ? event.target.classList.toggle("done")
     : 0;
 }
 
 /**
+ * @description Deletes Items (li + button) in the To Do
+ * @date 09/12/2020
+ * @param {*} event
+ * @return {*}
+ */
+function deleteItems(event) {
+  
+  return event.target.parentNode.children.classList.add("hidden");
+}
+
+/**
  * @description Adds eventListeners to every list items to be able to toggle them
  * @date 07/12/2020
  */
-function addingEventListeners() {
+function addingEventListenersToText() {
   for (let index = 0; index < li.length; index++) {
     const element = li[index];
     element.addEventListener("click", toggleItem);
   }
 }
 
-console.log(document.querySelectorAll("button"));
-
-function deleteItem() {}
+function addingEventListenersToDeleteButton() {
+  for (let index = 0; index < deleteButtons.length; index++) {
+    const element = deleteButtons[index];
+    element.addEventListener("clik", deleteItems);
+  }
+}

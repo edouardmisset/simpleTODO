@@ -1,8 +1,9 @@
 body {
-  margin: 0;
   min-width: 250px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  max-width: 600px;
+  height: 100vh;
+  margin: auto;
+  font-family: monospace;
 }
 
 header {
@@ -12,10 +13,12 @@ header {
 
 h2 {
   margin: 1rem 0;
+  font-size: 2rem;
 }
 
 h3 {
   margin: 1rem 0;
+  font-size: 2rem;
 }
 
 .addBar {
@@ -24,7 +27,8 @@ h3 {
 }
 
 #input {
-  font-size: x-large;
+  font-size: 2rem;
+  font-family: monospace;
   border: none;
   border-bottom: medium solid #39cccc;
   width: 100%;
@@ -32,10 +36,7 @@ h3 {
 
 button {
   border: none;
-}
-
-#addButton {
-  font-size: x-large;
+  font-size: 1.5rem;
 }
 
 ul {
@@ -43,23 +44,23 @@ ul {
   padding: 0;
   display: grid;
   grid-template-columns: 1fr 30px;
+  list-style: none;
 }
 
 ul li {
-  list-style: none;
-  background-color: #eee;
+  background-color: hsl(0, 0%, 98%);
   cursor: pointer;
-  font-size: large;
+  font-size: 2rem;
 }
 
 /* Set all odd list items to a different color (zebra-stripes) */
-ul li:nth-child(odd) {
-  background: #f9f9f9;
+ul li:nth-child(3n) {
+  background: hsl(0, 0%, 90%);
 }
 
 /* Darker background-color on hover */
 ul li:hover {
-  background: #ddd;
+  background: hsl(0, 0%, 85%);
 }
 
 .done {
@@ -74,10 +75,26 @@ footer {
   display: inline-flex;
   width: 100%;
   justify-content: center;
+  margin-bottom: 0;
 }
 
 .hidden {
   display: none;
+}
+
+.octopus {
+  font-size: 2rem;
+  background: -webkit-linear-gradient(
+    180deg,
+    red 0%,
+    orange 20%,
+    yellow 40%,
+    green 60%,
+    blue 80%,
+    purple 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /*

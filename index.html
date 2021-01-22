@@ -3,33 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="My first To-Do List application using Javascript">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
     <link rel="stylesheet" href="style.css" />
     <title>ToDo List</title>
   </head>
   <body>
-    <header class="container bg-teal text-center">
+    <header class="bg-red text-center">
       <h2>To Do List</h2>
-      <span class="addBar">
-        <label for="input">
-          <input
-            type="text"
-            name="input"
-            id="input"
-            placeholder="Add an item"
-          />
-        </label>
-        <button class="btn" id="addButton">+</button>
+      <span class="addBar bb bw1 b--red">
+        <label for="input" class="hidden">Add an item</label>
+        <input
+          type="text"
+          name="input"
+          id="input"
+          placeholder="Add an item"
+          class=""
+        />
+        <button class="" id="addButton">+</button>
       </span>
     </header>
     <ul>
       <li>Peace</li>
-      <button class="btn deleteBtn" >X</button>
+      <button class="deleteBtn" >X</button>
       <li>Love</li>
-      <button class="btn deleteBtn" >X</button>
+      <button class="deleteBtn" >X</button>
       <li>Understanding</li>
-      <button class="btn deleteBtn" >X</button>
+      <button class="deleteBtn" >X</button>
     </ul>
-    <footer class="text-center bg-teal"><h3>Made for 🐙</h></footer>
+    <footer class="text-center bg-red"><h3>Made for <span class="octopus">🐙</span></h></footer>
     <script src="script.js"></script>
   </body>
 </html>

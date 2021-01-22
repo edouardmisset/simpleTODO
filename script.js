@@ -43,6 +43,7 @@ function addItem() {
   listItem.appendChild(document.createTextNode(input.value));
   ul.appendChild(listItem);
   deleteButton.appendChild(document.createTextNode("X"));
+  deleteButton.classList.add("deleteBtn");
   ul.appendChild(deleteButton);
   // Reset input
   input.value = "";
